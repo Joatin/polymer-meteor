@@ -1,6 +1,6 @@
 Package.describe({
   name: 'joatin:polymer-compiler',
-  version: '0.0.4',
+  version: '0.0.5',
   // Brief, one-line summary of the package.
   summary: 'This package makes it possible to use Polymer with Meteor',
   // URL to the Git repository containing the source code for this package.
@@ -15,10 +15,7 @@ Package.onUse(function(api) {
 
   // Required in order to register plugins
   api.use('isobuild:compiler-plugin@1.0.0');
-  api.use('isobuild:linter-plugin@1.0.0');
   api.use('ecmascript');
-  api.addFiles('html-importer.js',['web.browser']);
-  api.export('htmlImporter',["client"]);
 
   // api.mainModule('polymer-compiler.js', 'client');
 });
@@ -30,6 +27,7 @@ Package.onTest(function(api) {
   api.mainModule('polymer-compiler-tests.js', 'client');
 });
 
+
 Package.registerBuildPlugin({
   name: 'Polymer Compilers',
   sources: [
@@ -37,13 +35,13 @@ Package.registerBuildPlugin({
   ],
   use: [
     // Uses an external packages to get the actual compilers
-    'caching-html-compiler@1.0.2',
-    'ecmascript@0.4.1',
-    'templating-tools@1.0.2',
+    'caching-compiler@1.0.0',
+    'ecmascript',
     'html-tools@1.0.7'
   ],
   npmDependencies: {
-    'lodash':'4.11.1',
-    'parse5': '2.1.5'
+    'cheerio': '0.20.0',
+    'html-minifier': '0.8.0',
+    'lodash.assign': '4.0.8'
   }
 });
