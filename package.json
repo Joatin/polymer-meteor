@@ -1,0 +1,24 @@
+{
+  "name": "polymer-meteor",
+  "version": "1.0.0-alpha.0",
+  "description": "Adds some integration stuff for meteor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joatin/polymer-meteor.git"
+  },
+  "keywords": [
+    "Polymer",
+    "Meteor",
+    "WebComponents"
+  ],
+  "author": "Joatin Granlund",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Joatin/polymer-meteor/issues"
+  },
+  "homepage": "https://github.com/Joatin/polymer-meteor#readme"
+}
