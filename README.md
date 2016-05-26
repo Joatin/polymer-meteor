@@ -3,3 +3,12 @@
 Ever tried to use Polymer with Meteor? You will quickly notice that there are a few obstacles on way. First polymer uses Bower instead of Npm. Second, Polymer is built around importing html files. Meteor only provides JavaScript imports. Polymer uses the "<template>" tag as it should be used. Meteor uses it to define templates for use with Blaze.
 
 However, you don't have to worry about any of that. Because this project solves all of that and even adds more to to make lifes easier.
+
+## Setup ##
+Start by removing the default template compiler.
+
+`meteor remove blaze-html-templates`
+
+Then you can add this package instead.
+
+`meteor add joatin:polymer-compiler`
