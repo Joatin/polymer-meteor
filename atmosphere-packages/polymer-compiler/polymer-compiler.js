@@ -1,4 +1,7 @@
 
+const assign = require('lodash.assign');
+const $ = require('cheerio');
+const htmlMinifier = require('html-minifier');
 
 Plugin.registerCompiler({
   extensions: ['html'],
@@ -131,7 +134,7 @@ class StaticHtmlCompiler {
 
     files.forEach((file) => {
       // skips files from node_modules
-      if (!!file.getPathInPackage().startsWith('node_modules') || !!file.getPathInPackage().startsWith('public')) {
+      if (!!file.getPathInPackage().startsWith('node_modules') || !!file.getPathInPackage().includes('bower_components')) {
         return;
       }
 
@@ -163,20 +166,20 @@ const fileMixin = {
   /**
    * @return {string} package prefix or empty string
    */
-  getPackagePrefix: function() {
+  getPackagePrefix() {
     const packageName = this.getPackageName();
     return packageName ? `packages/${packageName}/` : '';
   },
   /**
    * @return {string} absolute templateUrl
    */
-  getTemplateUrl: function() {
+  getTemplateUrl() {
     return this.getPackagePrefix() + this.getPathInPackage();
   },
   /**
    * @return {string} absolute temlateUrl extended by js extension
    */
-  getTemplateJS: function() {
+  getTemplateJS() {
     return `${this.getTemplateUrl()}.js`;
   }
 };
@@ -198,7 +201,7 @@ export function minify(html) {
     removeAttributeQuotes: false,
     caseSensitive: true,
     customAttrSurround: [[/#/, /(?:)/], [/\*/, /(?:)/], [/\[?\(?/, /(?:)/]],
-    customAttrAssign: [/\)?\]?=/],
+    customAttrAssign: [/\)?\]?=/]
   });
 }
 

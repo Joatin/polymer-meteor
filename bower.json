@@ -1,0 +1,23 @@
+{
+  "name": "polymer-meteor",
+  "description": "Adds some integration stuff for meteor",
+  "main": "index.js",
+  "authors": [
+    "Joatin Granlund"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Polymer",
+    "Meteor",
+    "WebComponents"
+  ],
+  "homepage": "https://github.com/Joatin/polymer-meteor",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

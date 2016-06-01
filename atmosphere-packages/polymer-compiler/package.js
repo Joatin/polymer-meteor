@@ -1,6 +1,6 @@
 Package.describe({
   name: 'joatin:polymer-compiler',
-  version: '0.0.5',
+  version: '0.0.8',
   // Brief, one-line summary of the package.
   summary: 'This package makes it possible to use Polymer with Meteor',
   // URL to the Git repository containing the source code for this package.
