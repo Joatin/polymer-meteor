@@ -8,6 +8,4 @@ services:
 
 install: curl https://install.meteor.com | /bin/sh
 
-script: meteor npm run test-single
-
 sudo: required
